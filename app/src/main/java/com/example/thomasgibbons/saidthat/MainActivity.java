@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         final ListView quotesTableListView = (ListView) findViewById(R.id.quotesTable);
         final ArrayList<String> quoteStrings = new ArrayList<String>();
         final ListAdapter customListAdapter = new CustomAdapter(this, foods);
-        quotesTableListView.setAdapter(customListAdapter);
+//        quotesTableListView.setAdapter(customListAdapter);
         final ListAdapter testViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, quoteStrings);
         quotesTableListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener(){
@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
                         Log.d("quote", "Retrieved " + quoteText);
                         quoteStrings.add(quoteText);
                     }
-//                    quotesTableListView.setAdapter(testViewAdapter);
+                    quotesTableListView.setAdapter(testViewAdapter);
 
                 } else {
                     Log.d("score", "Error: " + e.getMessage());
